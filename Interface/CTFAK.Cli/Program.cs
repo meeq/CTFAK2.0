@@ -36,7 +36,7 @@ public class Program
         Console.WriteLine("by 1987kostya and Yunivers");
         Console.ResetColor();
         Thread.Sleep(700);
-        Console.Clear();
+        try { Console.Clear(); } catch (IOException) { /* Ignore if not supported */ }
 
         ASCIIArt.DrawArt();
         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -238,7 +238,7 @@ public class Program
                 Console.ReadKey();
             }
             executeStopwatch.Stop();
-            Console.Clear();
+            try { Console.Clear(); } catch (IOException) { /* Ignore if not supported */ }
             ASCIIArt.DrawArt();
             Console.WriteLine($"Execution of {selectedTool.Name} finished in {executeStopwatch.Elapsed.TotalSeconds} seconds");
         }
@@ -273,7 +273,7 @@ public class Program
                         Console.ReadKey();
                     }
                     executeStopwatch.Stop();
-                    Console.Clear();
+                    try { Console.Clear(); } catch (IOException) { /* Ignore if not supported */ }
                     ASCIIArt.DrawArt();
                     Console.WriteLine($"Execution of {selectedTool.Name} finished in {executeStopwatch.Elapsed.TotalSeconds} seconds");
                 }

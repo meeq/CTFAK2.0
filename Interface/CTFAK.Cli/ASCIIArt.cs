@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -54,7 +55,8 @@ namespace CTFAK
         };
         public static void SetStatus(string msg)
         {
-            Console.Title = $"{version}. Status: {msg}";
+            try { Console.Title = $"{version}. Status: {msg}"; }
+            catch (IOException) { Console.WriteLine($"Status: {msg}"); }
         }
         public static void DrawArt()
         {
@@ -69,7 +71,9 @@ namespace CTFAK
         public static void DrawArt2()
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            var coeff = Console.WindowWidth / Console.WindowHeight;
+            var coeff = 1;
+            try { coeff = Console.WindowWidth / Console.WindowHeight; }
+            catch (IOException) { /* Use default coeff */ }
             foreach (var item in art2)
             {
                 //foreach (var c in item)

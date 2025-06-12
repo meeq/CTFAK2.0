@@ -65,7 +65,7 @@
     <EmbeddedResource Include="Resources\QandA.png" />
     <EmbeddedResource Include="Resources\Score.png" />
     <EmbeddedResource Include="Resources\String.png" />
-    <EmbeddedResource Include="Resources\Editbox.png" />
+    <EmbeddedResource Include="Resources\EditBox.png" />
     <EmbeddedResource Include="Resources\SubApp.png" />
     <EmbeddedResource Include="Resources\TreeControl.png" />
     <EmbeddedResource Include="Resources\WindowControl.png" />
